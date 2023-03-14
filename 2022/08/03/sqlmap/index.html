@@ -16,7 +16,7 @@
 <meta property="og:description" content="sqlmap 是一个开源渗透测试工具，它可以自动检测和利用 SQL 注入漏洞并接管数据库服务器。它具有强大的检测引擎，同时有众多功能，包括数据库指纹识别、从数据库中获取数据、访问底层文件系统以及在操作系统上带内连接执行命令。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-03T08:07:51.000Z">
-<meta property="article:modified_time" content="2023-03-13T02:21:01.016Z">
+<meta property="article:modified_time" content="2023-03-14T06:12:58.443Z">
 <meta property="article:author" content="Loin">
 <meta property="article:tag" content="w">
 <meta property="article:tag" content="sqlmap">
@@ -208,7 +208,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;url&quot;</span><br></pre></td></tr></table></figure>
 
 <p>post注入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;url&quot; -data &quot;post参数值&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;url&quot; --data &quot;post参数值&quot;</span><br></pre></td></tr></table></figure>
 
 <p>cookie注入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;url&quot; --cookie &quot;cookie值&quot;</span><br></pre></td></tr></table></figure>
