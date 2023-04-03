@@ -16,7 +16,7 @@
 <meta property="og:description" content="Nginx 是一个很强大的高性能Web和反向代理服务，它具有很多非常优越的特性： 在连接高并发的情况下，Nginx是Apache服务不错的替代品：Nginx在美国是做虚拟主机生意的老板们经常选择的软件平台之一。能够支持高达 50,000 个并发连接数的响应，感谢Nginx为我们选择了 epoll and kqueue作为开发模型。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-08T09:56:08.000Z">
-<meta property="article:modified_time" content="2022-08-09T03:29:36.651Z">
+<meta property="article:modified_time" content="2023-04-03T06:36:01.513Z">
 <meta property="article:author" content="Loin">
 <meta property="article:tag" content="中间件漏洞">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
 
 <h2 id="目录遍历"><a href="#目录遍历" class="headerlink" title="目录遍历"></a>目录遍历</h2><p>​	Nginx的目录遍历属于配置方面的问题,错误的配置可导致目录遍历</p>
 <p>​	修复</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将nginx.conf下的autoindex off修改为autoindex off</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将nginx.conf下的autoindex on修改为autoindex off</span><br></pre></td></tr></table></figure>
 
 
 
