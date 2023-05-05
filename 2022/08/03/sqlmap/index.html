@@ -16,7 +16,7 @@
 <meta property="og:description" content="sqlmap 是一个开源渗透测试工具，它可以自动检测和利用 SQL 注入漏洞并接管数据库服务器。它具有强大的检测引擎，同时有众多功能，包括数据库指纹识别、从数据库中获取数据、访问底层文件系统以及在操作系统上带内连接执行命令。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-03T08:07:51.000Z">
-<meta property="article:modified_time" content="2023-04-10T08:32:27.061Z">
+<meta property="article:modified_time" content="2023-05-05T03:09:43.688Z">
 <meta property="article:author" content="Loin">
 <meta property="article:tag" content="w">
 <meta property="article:tag" content="sqlmap">
@@ -185,41 +185,50 @@
         <hr>
 <p>sqlmap 是一个开源渗透测试工具，它可以自动检测和利用 SQL 注入漏洞并接管数据库服务器。它具有强大的检测引擎，同时有众多功能，包括数据库指纹识别、从数据库中获取数据、访问底层文件系统以及在操作系统上带内连接执行命令。</p>
 <span id="more"></span>
+
 <p>常用基础命令参数：</p>
-<p>-u                                -----------------对指定url进行注入</p>
-<p>-r								-----------------读取文本进行注入</p>
-<p>–dbms						-----------------指定目标数据库类型</p>
-<p>–batch						-----------------注入过程中自动选择 yes</p>
-<p>–dbs							-----------------获取目标所有数据库</p>
-<p>-D								-----------------指定数据库名</p>
-<p>–tables						-----------------获取目标所有表名</p>
-<p>-T								-----------------指定表名</p>
-<p>–columns					-----------------获取目标所有列名</p>
-<p>-C								-----------------指定列名</p>
-<p>–dump						-----------------打印指定数据库、表、列的数据</p>
-<p>–current-db				-----------------获取当前网站使用的数据库名</p>
-<p>–current-user			-----------------获取当前的用户名</p>
-<p>–current-password	-----------------获取当前用户的密码</p>
-<p>–level 1-5					-----------------设置探测等级(等级越高，探测越全面)</p>
-<p>-p								------------------指定注入点</p>
+<p>-u                                —————–对指定url进行注入</p>
+<p>-r								—————–读取文本进行注入</p>
+<p>–dbms						—————–指定目标数据库类型</p>
+<p>–batch						—————–注入过程中自动选择 yes</p>
+<p>–dbs							—————–获取目标所有数据库</p>
+<p>-D								—————–指定数据库名</p>
+<p>–tables						—————–获取目标所有表名</p>
+<p>-T								—————–指定表名</p>
+<p>–columns					—————–获取目标所有列名</p>
+<p>-C								—————–指定列名</p>
+<p>–dump						—————–打印指定数据库、表、列的数据</p>
+<p>–current-db				—————–获取当前网站使用的数据库名</p>
+<p>–current-user			—————–获取当前的用户名</p>
+<p>–current-password	—————–获取当前用户的密码</p>
+<p>–level 1-5					—————–设置探测等级(等级越高，探测越全面)			</p>
+<p>-p								——————指定注入点</p>
 <p>其他命令参数：</p>
 <p>正常注入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;url&quot;</span><br></pre></td></tr></table></figure>
+
 <p>post注入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;url&quot; --data &quot;post参数值&quot;</span><br></pre></td></tr></table></figure>
+
 <p>cookie注入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;url&quot; --cookie &quot;cookie值&quot;</span><br></pre></td></tr></table></figure>
+
 <p>–technique</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">B：基于布尔盲注</span><br><span class="line">E：基于报错注入</span><br><span class="line">U：基于联合查询</span><br><span class="line">S：堆叠查询</span><br><span class="line">T：基于时间盲注</span><br><span class="line">Q：内联查询</span><br></pre></td></tr></table></figure>
-<p>– tamper=“脚本1,脚本2”				-----------------指定脚本进行绕过测试</p>
-<p>–is-dba											-----------------判断当前用户是否为管理员</p>
-<p>–identify-waf									-----------------探测目标有没有使用waf</p>
-<p>–random-agent								-----------------使用随机的u-a头</p>
-<p>-user-agent=									-----------------使用指定的u-a头</p>
-<p>–file-read 服务器路径						-----------------读取服务器文件</p>
-<p>–file-write/–file dest 本地路径			-----------------向服务器上传文件</p>
-<p>-sql-query=										-----------------执行sql语句</p>
-<p>-sql-shell											-----------------获取交互式sql的shell</p>
+
+
+
+<p>– tamper&#x3D;”脚本1,脚本2”				—————–指定脚本进行绕过测试</p>
+<p>–is-dba											—————–判断当前用户是否为管理员</p>
+<p>–identify-waf									—————–探测目标有没有使用waf</p>
+<p>–random-agent								—————–使用随机的u-a头</p>
+<p>-user-agent&#x3D;									—————–使用指定的u-a头</p>
+<p>–file-read 服务器路径						—————–读取服务器文件</p>
+<p>–file-write&#x2F;–file dest 本地路径			—————–向服务器上传文件</p>
+<p>-sql-query&#x3D;										—————–执行sql语句</p>
+<p>-sql-shell											—————–获取交互式sql的shell</p>
+<p>–fresh-queries									—————–不使用缓存，重新开始注入</p>
+<p>–flush-session									——————清除当前url的缓存</p>
 
       
 
